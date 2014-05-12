@@ -201,6 +201,8 @@
           if (target) {
             e.stopImmediatePropagation();
             e.preventDefault();
+            $('ul.nav li').removeClass("active");
+            target.parent().addClass("active");
             var strThisType = String(target.attr("data-decktype"));
             funcType(strThisType);
           }
