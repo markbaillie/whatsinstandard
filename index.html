@@ -38,10 +38,12 @@
           </div>
         </div>
         <div class="col-md-6">
-          <ul class="nav nav-pills">
-            <li class="active"><a href="#" data-decktype="Standard">Standard</a></li>
-            <li><a href="#" data-decktype="Extended">Extended</a></li>
-          </ul>
+          <div class="page-header">
+            <ul class="nav nav-pills pull-right">
+              <li class="active"><a href="#" data-decktype="Standard">Standard</a></li>
+              <li><a href="#" data-decktype="Extended">Extended</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -191,6 +193,7 @@
             funcType(strThisType);
           }
         });
+        funcType($('ul.nav li a').first().attr('data-decktype'));
       });
 
       function funcType(argStrType){
@@ -198,15 +201,15 @@
         $('title').html("What's in " + argStrType + "?");
         $('div.page-header h1').html("What's in " + argStrType + "?");
         $('div[data-releases] ul li[data-decktypes]').hide();
-        $('div[data-releases] ul li[data-decktypes*=' + argStrType + ']').show();
-        $('div[data-releases] ul').each(function( index ) {
+        $('div[data-releases] ul li[data-decktypes~="' + argStrType + '"]').show();
+        $('div[data-releases] ul').each(function() {
           $(this).hide();
           if ($(this).find('li:visible').length > 0){
             $(this).show();
           }
         });
         $('div[data-description]').hide();
-        $('div[data-description=' + argStrType + ']').show();
+        $('div[data-description="' + argStrType + '"]').show();
       }
     </script>
   </body>
