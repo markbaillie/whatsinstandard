@@ -27,6 +27,9 @@
         margin-top: -3px;
         width: 60px;
       }
+      ul.nav-pills {
+        margin-top: 15px;
+      }
     </style>
   </head>
   <body>
@@ -38,12 +41,10 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="page-header">
-            <ul class="nav nav-pills pull-right">
-              <li class="active"><a href="#" data-decktype="Standard">Standard</a></li>
-              <li><a href="#" data-decktype="Extended">Extended</a></li>
-            </ul>
-          </div>
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#" data-decktype="Standard">Standard</a></li>
+            <li><a href="#" data-decktype="Extended">Extended</a></li>
+          </ul>
         </div>
       </div>
       <div class="row">
@@ -198,12 +199,12 @@
 
       function funcType(argStrType){
         console.log(argStrType);
-        $('title').html("What's in " + argStrType + "?");
-        $('div.page-header h1').html("What's in " + argStrType + "?");
-        $('div[data-releases] ul li[data-decktypes]').hide();
-        $('div[data-releases] ul li[data-decktypes~="' + argStrType + '"]').show();
-        $('div[data-releases] ul').each(function() {
-          $(this).hide();
+        $("title").html("What's in " + argStrType + "?");
+        $("div.page-header h1").html("What's in " + argStrType + "?");
+        $("div[data-releases] ul li[data-decktypes]").hide();
+        $("div[data-releases] ul li[data-decktypes~='" + argStrType + "']").show();
+        $("div[data-releases] ul").each(function() {
+          //$(this).hide();
           if ($(this).find('li:visible').length > 0){
             $(this).show();
           }
