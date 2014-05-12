@@ -62,12 +62,14 @@
               New Phyrexia
               <span class="badge"><img src="img/dgm.jpg" /></span>
             </li>
+            <span class="label label-success" data-decktypes="Extended">Until late 2014</span>
           </ul>
           <ul class="list-group">
             <li class="list-group-item" data-decktypes="Extended">
               2012 Core Set
               <span class="badge"><img src="img/m14.jpg" /></span>
             </li>
+            <span class="label label-success" data-decktypes="Extended">Until late 2014</span>
           </ul>
           <ul class="list-group">
             <li class="list-group-item" data-decktypes="Extended">
@@ -82,12 +84,14 @@
               Avacyn Restored
               <span class="badge"><img src="img/dgm.jpg" /></span>
             </li>
+            <span class="label label-success" data-decktypes="Extended">Until late 2015</span>
           </ul>
           <ul class="list-group">
             <li class="list-group-item" data-decktypes="Extended">
               2013 Core Set
               <span class="badge"><img src="img/m14.jpg" /></span>
             </li>
+            <span class="label label-success" data-decktypes="Extended">Until late 2015</span>
           </ul>
           <ul class="list-group">
             <li class="list-group-item" data-decktypes="Standard Extended">
@@ -102,12 +106,16 @@
               Dragon's Maze
               <span class="badge"><img src="img/dgm.jpg" /></span>
             </li>
+            <span class="label label-success" data-decktypes="Standard">Until late 2014</span>
+            <span class="label label-success" data-decktypes="Extended">Until late 2016</span>
           </ul>
           <ul class="list-group">
             <li class="list-group-item" data-decktypes="Standard Extended">
               2014 Core Set
               <span class="badge"><img src="img/m14.jpg" /></span>
             </li>
+            <span class="label label-success" data-decktypes="Standard">Until late 2014</span>
+            <span class="label label-success" data-decktypes="Extended">Until late 2016</span>
           </ul>
           <ul class="list-group">
             <li class="list-group-item" data-decktypes="Standard Extended">
@@ -122,6 +130,8 @@
               Journey into Nyx
               <span class="badge"><img src="img/jou.jpg" /></span>
             </li>
+            <span class="label label-primary" data-decktypes="Standard">Until late 2015</span>
+            <span class="label label-primary" data-decktypes="Extended">Until late 2017</span>
           </ul>
           <ul class="list-group">
             <li class="list-group-item gray" data-decktypes="Standard Extended">
@@ -203,6 +213,8 @@
         $("div.page-header h1").html("What's in " + argStrType + "?");
         $("div[data-releases] ul li[data-decktypes]").hide();
         $("div[data-releases] ul li[data-decktypes~='" + argStrType + "']").show();
+        $("div[data-releases] ul span[data-decktypes]").hide();
+        $("div[data-releases] ul span[data-decktypes~='" + argStrType + "']").show();
         $("div[data-releases] ul").each(function() {
           //$(this).hide();
           if ($(this).find('li:visible').length > 0){
